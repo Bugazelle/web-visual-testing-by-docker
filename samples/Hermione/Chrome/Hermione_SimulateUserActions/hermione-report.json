@@ -1,0 +1,14 @@
+{
+  "1 UserActions.PC": {
+    "fullName": "1 UserActions",
+    "browserId": "PC",
+    "file": "demo.js",
+    "duration": 21495,
+    "meta": {
+      "pid": 13561,
+      "url": "https://github.com/gemini-testing/hermione/"
+    },
+    "url": "/gemini-testing/hermione/",
+    "status": "success"
+  }
+}

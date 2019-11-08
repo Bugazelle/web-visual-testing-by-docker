@@ -1,0 +1,62 @@
+{
+  "1 plain.iPadMini_Air": {
+    "fullName": "1 plain",
+    "suiteFullName": "1",
+    "browserId": "iPadMini_Air",
+    "file": "demo.js",
+    "referencePath": "gemini/screens/1/plain/iPadMini_Air.png",
+    "url": "http://detectmobilebrowsers.com/",
+    "status": "success",
+    "duration": 3872
+  },
+  "1 plain.SamsungGalaxy_Note_4": {
+    "fullName": "1 plain",
+    "suiteFullName": "1",
+    "browserId": "SamsungGalaxy_Note_4",
+    "file": "demo.js",
+    "referencePath": "gemini/screens/1/plain/SamsungGalaxy_Note_4.png",
+    "url": "http://detectmobilebrowsers.com/",
+    "status": "success",
+    "duration": 3695
+  },
+  "1 plain.iPhone5_SE": {
+    "fullName": "1 plain",
+    "suiteFullName": "1",
+    "browserId": "iPhone5_SE",
+    "file": "demo.js",
+    "referencePath": "gemini/screens/1/plain/iPhone5_SE.png",
+    "url": "http://detectmobilebrowsers.com/",
+    "status": "success",
+    "duration": 3700
+  },
+  "1 plain.iPadPro_12Inches": {
+    "fullName": "1 plain",
+    "suiteFullName": "1",
+    "browserId": "iPadPro_12Inches",
+    "file": "demo.js",
+    "referencePath": "gemini/screens/1/plain/iPadPro_12Inches.png",
+    "url": "http://detectmobilebrowsers.com/",
+    "status": "success",
+    "duration": 3756
+  },
+  "1 plain.PC2": {
+    "fullName": "1 plain",
+    "suiteFullName": "1",
+    "browserId": "PC2",
+    "file": "demo.js",
+    "referencePath": "gemini/screens/1/plain/PC2.png",
+    "url": "http://detectmobilebrowsers.com/",
+    "status": "success",
+    "duration": 5663
+  },
+  "1 plain.PC1": {
+    "fullName": "1 plain",
+    "suiteFullName": "1",
+    "browserId": "PC1",
+    "file": "demo.js",
+    "referencePath": "gemini/screens/1/plain/PC1.png",
+    "url": "http://detectmobilebrowsers.com/",
+    "status": "success",
+    "duration": 1431
+  }
+}
