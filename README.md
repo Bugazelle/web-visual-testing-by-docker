@@ -15,7 +15,6 @@ Pull the docker image from:
 
 ```
 docker pull bugazelle/web-visual-testing
-
 ```
 
 ![](noVNC_Sample.gif)
