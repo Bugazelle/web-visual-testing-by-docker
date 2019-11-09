@@ -14,5 +14,3 @@ npm config set strict-ssl false
 npm config set registry ${NPM_REGISTRY}
 npm config set unsafe-perm true
 npm config set prefix "/usr/local/"
-chmod -R 777 $HOME/.npm
-chmod -R 777 $HOME/.npmrc
