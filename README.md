@@ -1,4 +1,4 @@
-# Web Visual Testing Docker
+# Web Visual Testing by Docker
 
 ## Content
 - [Support Visual Testing Lib](#support-visual-testing-lib)
