@@ -1,5 +1,13 @@
 # Web Visual Testing by Docker
 
+Pull the docker image from: 
+
+```
+docker pull bugazelle/web-visual-testing
+```
+
+![](noVNC_Sample.gif)
+
 ## Content
 - [Support Visual Testing Lib](#support-visual-testing-lib)
 - [Highlight: NoVNC, Jenkins, CNTLM](#highlight)
@@ -9,15 +17,6 @@
 - [Hermione Samples](#hermione-samples)
 - [System Info](#system-info)
 - [Useful Links](#useful-links)
-
-
-Pull the docker image from: 
-
-```
-docker pull bugazelle/web-visual-testing
-```
-
-![](noVNC_Sample.gif)
 
 ## Support Visual Testing Lib
 
@@ -199,7 +198,7 @@ docker pull bugazelle/web-visual-testing
 
    > Note: 
    > 1. PhantomJS is outdated, use chrome-headless, firefox-headless instead 
-   > 2. Get help from: [Webdriver API](https://webdriver.io/api.html), [issue-443](https://github.com/gemini-testing/hermione/issues/443), and [Chai Assert](https://www.chaijs.com/api/assert/)
+   > 2. Get help from: [WebdriverIO API](https://webdriver.io/api.html), [issue-443](https://github.com/gemini-testing/hermione/issues/443), and [Chai Assert](https://www.chaijs.com/api/assert/)
 
 ## System Info
 
