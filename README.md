@@ -116,7 +116,7 @@ docker pull bugazelle/web-visual-testing
        -e CNTLM_PROXY_USER=YourUserName \
        -e CNTLM_PROXY_KEY=YourKey \
        -e CNTLM_PROXY_SERVER=TheProxyServer, like my.proxy:3128 \
-       /bin/bash -c "cntlm-run.sh; \
+       bugazelle/web-visual-testing /bin/bash -c "cntlm-run.sh; \
           export http_proxy=http://127.0.0.1:3128; \
           export https_proxy=http://127.0.0.1:3128; \
           wget --no-check-certificate http://apache.org; "
