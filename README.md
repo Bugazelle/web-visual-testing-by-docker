@@ -20,9 +20,9 @@ docker pull bugazelle/web-visual-testing
 
 ## Support Visual Testing Lib
 
-1. [BackstopJS](https://github.com/garris/BackstopJS)
-2. [Gemini](https://github.com/gemini-testing/gemini)
-3. [Hermione](https://github.com/gemini-testing/hermione)
+1. [BackstopJS: 4.3.2](https://github.com/garris/BackstopJS)
+2. [Gemini: 7.5.1](https://github.com/gemini-testing/gemini)
+3. [Hermione: 2.13.1](https://github.com/gemini-testing/hermione)
 
 > Chrome/ChromeDriver: 77.0.3865.120/77.0.3865.40, Firefox/Geckodriver: 69.0.3/0.26.0, Selenium Sever: 3.9.1
 > - If you would like to require a certain version of chrome/chromedirver, firefox/geckodriver and selenium server, please raise a issue. I will build the image for you.
