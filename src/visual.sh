@@ -22,8 +22,7 @@ unzip chromium.zip -d ${puppeteer}/.local-chromium/linux-${position}
 sed -i "s/\"chromium_revision\"\: \"[0-9]\+\"/\"chromium_revision\"\: \"${position}\"/g" ${puppeteer}/package.json
 rm -f chromium.zip
 
-echo "Installing Gemini v${GEMINI_VERSION}, Hermione v${HERMIONE_VERSION}..."
-npm install -g gemini@${GEMINI_VERSION}
+echo "Installing Hermione v${HERMIONE_VERSION}..."
 npm install -g hermione@${HERMIONE_VERSION}
 npm install -g html-reporter@${HTML_REPORTER_VERSION}
 npm install -g html-reporter-legacy@npm:html-reporter@${HTML_REPORTER_LEGACY_VERSION}

@@ -1,24 +1,22 @@
-module.exports = {
-  baseURL: 'https://selenium-release.storage.googleapis.com',
-  version: '3.9.1',
-  drivers: {
-    chrome: {
-      version: '77.0.3865.40',
-      arch: process.arch,
-      baseURL: 'https://chromedriver.storage.googleapis.com'
+module.exports = () => {
+  const config = {
+    baseURL: 'https://github.com/SeleniumHQ/selenium/releases/download',
+    version: process.env.SELENIUM_VERSION || '4.4.0',
+    drivers: {
+      chrome: {
+        version: 'latest',
+        fallbackVersion: '106.0.5249.61',
+        arch: process.arch,
+        baseURL: 'https://chromedriver.storage.googleapis.com',
+      },
+      firefox: {
+        version: 'latest',
+        fallbackVersion: '0.32.0',
+        arch: process.arch,
+        baseURL: 'https://github.com/mozilla/geckodriver/releases/download',
+      },
     },
-    ie: {
-      version: '3.8.0',
-      arch: process.arch,
-      baseURL: 'https://selenium-release.storage.googleapis.com'
-    },
-    firefox: {
-      version: '0.26.0',
-      arch: process.arch,
-      baseURL: 'https://github.com/mozilla/geckodriver/releases/download'
-    },
-    edge: {
-      version: '16299'
-    }
-  }
+  };
+
+  return config;
 };

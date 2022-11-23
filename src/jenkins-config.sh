@@ -11,13 +11,13 @@ cd $HOME/JenkinsAgent
 groupadd -g ${JENKINS_USER_ID} ${JENKINS_USER}
 useradd -l -c "Jenkins user" -m -d /home/jenkins/ -u ${JENKINS_USER_ID} -g ${JENKINS_USER_ID} ${JENKINS_USER}
 
-echo 'deb http://deb.debian.org/debian stretch-backports main' > /etc/apt/sources.list.d/stretch-backports.list
-curl -k "https://pgp.surfnet.nl/pks/lookup?op=get&search=0x7638D0442B90D010" | awk '/^-----BEGIN/ { output = 1 }; output; /^-----END/ { output = 0 }' > 7638D0442B90D010.txt
-curl -k "https://pgp.surfnet.nl/pks/lookup?op=get&search=0x04EE7237B7D453EC" | awk '/^-----BEGIN/ { output = 1 }; output; /^-----END/ { output = 0 }' > 04EE7237B7D453EC.txt
-apt-key add 7638D0442B90D010.txt
-apt-key add 04EE7237B7D453EC.txt
-apt-get update
-apt-get install -t stretch-backports git-lfs
+#echo 'deb http://deb.debian.org/debian stretch-backports main' > /etc/apt/sources.list.d/stretch-backports.list
+#curl -k "https://pgp.surfnet.nl/pks/lookup?op=get&search=0x7638D0442B90D010" | awk '/^-----BEGIN/ { output = 1 }; output; /^-----END/ { output = 0 }' > 7638D0442B90D010.txt
+#curl -k "https://pgp.surfnet.nl/pks/lookup?op=get&search=0x04EE7237B7D453EC" | awk '/^-----BEGIN/ { output = 1 }; output; /^-----END/ { output = 0 }' > 04EE7237B7D453EC.txt
+#apt-key add 7638D0442B90D010.txt
+#apt-key add 04EE7237B7D453EC.txt
+#apt-get update
+#apt-get install -t stretch-backports git-lfs
 curl --create-dirs -fsSLo /usr/share/jenkins/agent.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${JENKINS_REMOTE_VERSION}/remoting-${JENKINS_REMOTE_VERSION}.jar
 chmod 755 /usr/share/jenkins
 chmod 644 /usr/share/jenkins/agent.jar
