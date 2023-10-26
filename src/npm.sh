@@ -12,5 +12,5 @@ curl -sL -k https://deb.nodesource.com/setup_${NODEJS_VERSION} | bash -
 apt-get install -y nodejs
 npm config set strict-ssl false
 npm config set registry ${NPM_REGISTRY}
-npm config set unsafe-perm true
+# npm config set unsafe-perm true
 npm config set prefix "/usr/local/"

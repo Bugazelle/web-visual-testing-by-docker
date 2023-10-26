@@ -1,0 +1,4 @@
+{
+	"configurationGuide": "https://pptr.dev/api/puppeteer.configuration",
+	"executablePath": "/usr/bin/chromium"
+}

@@ -1,4 +1,4 @@
-FROM bugazelle/ubuntu-xfce-vnc:latest
+FROM consol/debian-xfce-vnc
 
 MAINTAINER Wang Cheng (Ken) "463407426@qq.com"
 
@@ -7,31 +7,32 @@ MAINTAINER Wang Cheng (Ken) "463407426@qq.com"
 # ENV https_proxy=http://172.17.0.1:3128
 
 # Test components
-ARG CHROME_VERSION=106.0.5249.61-1
-ARG CHROMIUM_VERSION=106.0.5249.61
-ARG CHROMEDRIV_VERSION=106.0.5249.61
+ARG CHROMIUM_VERSION=117.0.5938.149
+ARG CHROMEDRIV_VERSION=117.0.5938.149
+ARG FIREFOX_VERSION=117.0
+ARG GECKO_VERSION=0.33.0
 
-ARG FIREFOX_VERSION=105.0.3
-ARG GECKO_VERSION=0.32.0
+# Warn: If you set above browser versions, it will override the Playwright supported browser versions
+# Warn: You may need to adjust the Playwright version to get better compatibility
+# Note1: Playwright supported browsers here: https://github.com/microsoft/playwright/releases
+# Note2: BackstopJS supports Playwright as one of engines
+ARG PLAYWRIGHT_VERSION=1.38.1
+ARG PUPPTEER_VERSION=21.3.8
 
-ARG BACKSTOPJS_VERSION=6.1.4
-ARG HERMIONE_VERSION=5.5.1
-ARG HTML_REPORTER_VERSION=9.5.0
+ARG BACKSTOPJS_VERSION=6.2.2
+ARG HERMIONE_VERSION=7.1.6
+ARG HTML_REPORTER_VERSION=9.10.3
 ARG JSON_REPORTER_VERSION=0.1.0
-ARG LOOKS_SAME_VERSION=8.1.0
-ARG SELENIUMSTANDALONE_VERSION=8.2.4
-ARG CHAI_VERSION=4.3.7
-ARG NODEJS_VERSION=16.x
+ARG LOOKS_SAME_VERSION=8.2.4
+ARG CHAI_VERSION=4.3.10
+ARG SELENIUM_SERVER=4.14.0
+ARG NODEJS_VERSION=18.x
 ARG NPM_REGISTRY=https://registry.npmjs.org/
 # ARG NPM_REGISTRY=https://registry.npm.taobao.org/
 
-# System
-ARG USER=web-visual-testing
-ARG USER_ID=1001
-
 # Jenkins
 ARG JENKINS_USER=jenkins
-ARG JENKINS_USER_ID=1000
+ARG JENKINS_USER_ID=1001
 ARG JENKINS_REMOTE_VERSION=4.9
 
 ############ 1. Jenkins Environments ############
@@ -54,7 +55,7 @@ ARG JENKINS_REMOTE_VERSION=4.9
 # CNTLM_NO_PROXY: no default, please see the configuration in cntlm.conf.tmpl, default: localhost, 127.0.0.*, 10.*, 192.168.*, 172.17.*
 # How to run: launch cntlm-run.sh
 
-ENV REFRESHED_AT=2019-11 \
+ENV REFRESHED_AT=2023-10 \
     DEBIAN_FRONTEND=noninteractive \
     JENKINS_MASTER_URL=http://127.0.0.1:8080 \
     JENKINS_SLAVE_KEY=none \
@@ -67,14 +68,15 @@ ENV REFRESHED_AT=2019-11 \
 # For more info, please refer to https://github.com/Bugazelle/docker-headless-vnc-container
 USER 0
 
+### Reset password
+RUN echo 'root:123' | chpasswd
+
 # Copy: Default work directory is $HOME: /headless
 ADD src/. $HOME
-ADD default-config.js $HOME
 
 ## Build
 RUN chmod +x *.sh \
     && ./remove.sh \
-    && ./user.sh \
     && ./tools.sh \
     && ./firefox.sh \
     && ./chrome.sh \
@@ -85,4 +87,5 @@ RUN chmod +x *.sh \
     && ./clear.sh
 
 # Change user from root -> ${user}
-USER ${USER}
+# there is a bug in nss wrapper: If using normal user, the chromium cannnot open
+# USER 1000
